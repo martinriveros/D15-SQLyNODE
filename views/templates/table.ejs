@@ -1,0 +1,33 @@
+<div id="tableInjection" class="table-responsive">
+  <table class="table table-dark table-sm table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Price</th>
+        <th scope="col">Thumbnail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% if(noProductos){%>
+      <tr>
+        <td class="align-right" colspan="3">
+          <h1>No hay ningun producto para mostrar</h1>
+        </td>
+      </tr>
+      <% } else {%> <% responseObjectTotal.forEach(element => { %>
+      <tr>
+        <td><%= element.name %></td>
+        <td>$ <%= element.price %></td>
+        <td>
+          <img
+            src="<%= element.thumbnail %>"
+            alt="missing"
+            width="30"
+            height="30"
+          />
+        </td>
+      </tr>
+      <% }); %> <% } %>
+    </tbody>
+  </table>
+</div>

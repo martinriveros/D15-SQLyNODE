@@ -1,0 +1,10 @@
+<div id="injectedMessages">
+  <% if(noMensajes){%>
+  <p>Se el primero en dejar un mensaje</p>
+  <% } else {%> <% responseObject.forEach(element => { %>
+  <span id="email"><%= element.email %></span
+  ><span class="fechayhora"> <%= element.moment %>/</span>
+  <span id="texto"><%= element.message %></span><br />
+
+  <% }); %> <% } %>
+</div>
